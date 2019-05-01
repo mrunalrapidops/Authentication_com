@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Local Storage</title>
+</head>
+<body>
+
+    <div class="container">
+        <input type="text" name="name" id="name" placeholder="Enter Name"> 
+        <button type="button" onclick="get()">Get LS data</button>
+        <button type="button" onclick="remove()">Remove LS data</button> 
+    </div>
+    <script>
+        document.getElementById("name").addEventListener("input",function(e){
+            localStorage.setItem("name",e.target.value);
+        })
+        function get(){
+            console.log(localStorage.getItem("name"));
+            window.alert("You Store:"+localStorage.getItem("name"))
+        }
+        function remove(){
+            localStorage.removeItem("name");
+            window.alert("successfully Remove");
+        }
+    </script>   
+
+</body>
+</html>
